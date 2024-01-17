@@ -17,18 +17,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         print("loaded")
-        func applicationDidFinishLaunching(_ aNotification: Notification) {
-            window = NSWindow(
-                contentRect: NSRect(x: 0, y: 0, width: 480, height: 270),
-                styleMask: [.miniaturizable, .closable, .resizable, .titled],
-                backing: .buffered, defer: false)
-            window.center()
-            window.title = "No Storyboard Window"
-            window.contentView = NSHostingView(rootView: Help())
-
-            window.makeKeyAndOrderFront(nil)
-        }
-        print("loaded")
          statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
          if let button = statusItem.button {
              button.image = NSImage(systemSymbolName: "w.circle", accessibilityDescription: "1")
@@ -66,13 +54,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     private func showWindow() {
+        NSApp.activate(ignoringOtherApps: true)
                         window = NSWindow(
                             contentRect: NSRect(x: 0, y: 0, width: 480, height: 270),
                             styleMask: [.miniaturizable, .closable, .resizable, .titled],
                             backing: .buffered, defer: false)
                         window.center()
-                        window.title = "Procyon Tools"
+                        window.title = "Procyon Control"
                         window.contentView = NSHostingView(rootView: Help())
+                        window.makeKey()
+                        window.orderFrontRegardless()
                         window.makeKeyAndOrderFront(nil)
     }
 
