@@ -6,25 +6,86 @@
 //
 
 import Cocoa
+import SwiftUI
 
-@main
+//@main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    
-
+    private var window: NSWindow!
+    private var statusItem: NSStatusItem!
+    private var applicationName: String = "Procyon Tools"
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        print("loaded")
+        func applicationDidFinishLaunching(_ aNotification: Notification) {
+            window = NSWindow(
+                contentRect: NSRect(x: 0, y: 0, width: 480, height: 270),
+                styleMask: [.miniaturizable, .closable, .resizable, .titled],
+                backing: .buffered, defer: false)
+            window.center()
+            window.title = "No Storyboard Window"
+            window.contentView = NSHostingView(rootView: Help())
+
+            window.makeKeyAndOrderFront(nil)
+        }
+        print("loaded")
+         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+         if let button = statusItem.button {
+             button.image = NSImage(systemSymbolName: "w.circle", accessibilityDescription: "1")
+         }
+
+         setupMenus()
+     }
+
+     func setupMenus() {
+         // 1
+         let menu = NSMenu()
+
+         // 2
+         let one = NSMenuItem(title: "One", action: #selector(didTapOne) , keyEquivalent: "1")
+         menu.addItem(one)
+
+         let two = NSMenuItem(title: "Two", action: #selector(didTapTwo) , keyEquivalent: "2")
+         menu.addItem(two)
+
+         let three = NSMenuItem(title: "About", action: #selector(didTapThree) , keyEquivalent: "3")
+         menu.addItem(three)
+
+         menu.addItem(NSMenuItem.separator())
+
+         menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+
+         // 3
+         statusItem.menu = menu
+     }
+    
+    
+    private func changeStatusBarButton(number: Int) {
+        if let button = statusItem.button {
+            button.image = NSImage(systemSymbolName: "\(number).circle", accessibilityDescription: number.description)
+        }
+    }
+    private func showWindow() {
+                        window = NSWindow(
+                            contentRect: NSRect(x: 0, y: 0, width: 480, height: 270),
+                            styleMask: [.miniaturizable, .closable, .resizable, .titled],
+                            backing: .buffered, defer: false)
+                        window.center()
+                        window.title = "Procyon Tools"
+                        window.contentView = NSHostingView(rootView: Help())
+                        window.makeKeyAndOrderFront(nil)
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    @objc func didTapOne() {
+        changeStatusBarButton(number: 1)
     }
 
-    func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
-        return true
+    @objc func didTapTwo() {
+        changeStatusBarButton(number: 2)
     }
 
-
+    @objc func didTapThree() {
+        changeStatusBarButton(number: 3)
+        showWindow()
+    }
 }
-

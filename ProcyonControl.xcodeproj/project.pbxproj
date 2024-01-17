@@ -11,6 +11,9 @@
 		0186E08E2B585C5000A1B540 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186E08D2B585C5000A1B540 /* ViewController.swift */; };
 		0186E0902B585C5200A1B540 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0186E08F2B585C5200A1B540 /* Assets.xcassets */; };
 		0186E0932B585C5200A1B540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0186E0912B585C5200A1B540 /* Main.storyboard */; };
+		0186E09E2B58687E00A1B540 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186E09D2B58687E00A1B540 /* main.swift */; };
+		0186E0A22B58691500A1B540 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0186E0A12B58691500A1B540 /* Help.swift */; };
+		0186E0A42B586B2500A1B540 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0186E0A32B586B2500A1B540 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,10 @@
 		0186E08F2B585C5200A1B540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0186E0922B585C5200A1B540 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0186E0942B585C5200A1B540 /* ProcyonControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProcyonControl.entitlements; sourceTree = "<group>"; };
+		0186E09A2B58605600A1B540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0186E09D2B58687E00A1B540 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		0186E0A12B58691500A1B540 /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		0186E0A32B586B2500A1B540 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +43,7 @@
 		0186E07F2B585C5000A1B540 = {
 			isa = PBXGroup;
 			children = (
+				0186E0A32B586B2500A1B540 /* .gitignore */,
 				0186E08A2B585C5000A1B540 /* ProcyonControl */,
 				0186E0892B585C5000A1B540 /* Products */,
 			);
@@ -52,11 +60,14 @@
 		0186E08A2B585C5000A1B540 /* ProcyonControl */ = {
 			isa = PBXGroup;
 			children = (
+				0186E09D2B58687E00A1B540 /* main.swift */,
+				0186E09A2B58605600A1B540 /* Info.plist */,
 				0186E08B2B585C5000A1B540 /* AppDelegate.swift */,
 				0186E08D2B585C5000A1B540 /* ViewController.swift */,
 				0186E08F2B585C5200A1B540 /* Assets.xcassets */,
 				0186E0912B585C5200A1B540 /* Main.storyboard */,
 				0186E0942B585C5200A1B540 /* ProcyonControl.entitlements */,
+				0186E0A12B58691500A1B540 /* Help.swift */,
 			);
 			path = ProcyonControl;
 			sourceTree = "<group>";
@@ -120,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0186E0902B585C5200A1B540 /* Assets.xcassets in Resources */,
+				0186E0A42B586B2500A1B540 /* .gitignore in Resources */,
 				0186E0932B585C5200A1B540 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +145,8 @@
 			files = (
 				0186E08E2B585C5000A1B540 /* ViewController.swift in Sources */,
 				0186E08C2B585C5000A1B540 /* AppDelegate.swift in Sources */,
+				0186E0A22B58691500A1B540 /* Help.swift in Sources */,
+				0186E09E2B58687E00A1B540 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +294,10 @@
 				DEVELOPMENT_TEAM = 454648V2PC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProcyonControl/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,8 +323,10 @@
 				DEVELOPMENT_TEAM = 454648V2PC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProcyonControl/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
